@@ -14,11 +14,11 @@ jobs:
         with:
           python-version: '3.13.5'
 
-      - run: pip install jupyter-book
+      - run: pip install jupyter-book ghp-import
       - run: jupyter-book build .
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_build/html
+          publish_dir: ghp-import -n -p root/_build/html
