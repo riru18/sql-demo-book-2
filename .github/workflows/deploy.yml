@@ -14,7 +14,7 @@ jobs:
         with:
           python-version: '3.13.5'
 
-      - run: pip install jupyter-book
+      - run: pip install jupyter-book ghp-import
       - run: jupyter-book build .
 
       - name: Deploy to GitHub Pages
